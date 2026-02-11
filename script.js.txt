@@ -1,0 +1,3 @@
+function closeMessage() {
+    document.getElementById("loveMessage").style.display = "none";
+}
