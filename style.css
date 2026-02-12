@@ -32,7 +32,17 @@ body {
   max-width: 480px;
   text-align: center;
   box-shadow: 0 0 60px rgba(255, 77, 109, 0.4);
-  animation: scaleIn 1.5s ease;
+}
+
+/* قبل الفتح */
+.card.closed {
+  transform: scale(0.6) rotateX(40deg);
+  opacity: 0;
+}
+
+/* بعد الفتح */
+.card.open {
+  animation: openCard 1.5s ease forwards;
 }
 
 .name {
@@ -68,12 +78,37 @@ body {
   box-shadow: 0 0 25px rgba(255, 77, 109, 0.8);
 }
 
-/* قلوب */
+/* القلوب الكبيرة */
 .hearts span {
   position: absolute;
   bottom: -80px;
   animation: floatUp linear infinite;
   filter: drop-shadow(0 0 15px rgba(255, 77, 109, 0.8));
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes openCard {
+  0% {
+    transform: scale(0.6) rotateX(40deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05) rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff4d6d; }
+  to { text-shadow: 0 0 30px #ff7eb3; }
 }
 
 @keyframes floatUp {
@@ -84,25 +119,5 @@ body {
   to {
     transform: translateY(-120vh) scale(1.2);
     opacity: 1;
-}
-  
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes scaleIn {
-  from { transform: scale(0.85); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 10px #ff4d6d; }
-  to { text-shadow: 0 0 30px #ff7eb3; }
-}
-
-@keyframes floatUp {
-  from { transform: translateY(0); }
-  to { transform: translateY(-110vh); }
+  }
 }
