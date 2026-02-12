@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <title>Valentine 💖</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>For Sara 💖</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- موسيقى -->
-<audio autoplay loop>
-    <source src="love.mp3" type="audio/mpeg">
-</audio>
+<div class="cinema-overlay" id="overlay">
+  <div class="card">
+    <h1 class="name">سارة</h1>
+    <p id="typewriter"></p>
 
-<!-- رسالة الحب -->
-<div class="overlay" id="loveMessage">
-    <div class="message-box">
-        <h1>💖 Maria Liz 💖</h1>
-        <p>
-            منذ عرفتكِ، والعالم أصبح أجمل،  
-            وقلبي لم يعد يعرف سواكِ،  
-            أحبك اليوم، وغداً، وكل العمر 🌹
-        </p>
-        <button onclick="closeMessage()">❤️ أحبك</button>
-    </div>
+    <button class="love-btn" onclick="startLove()">❤️ من قلبي</button>
+  </div>
 </div>
 
-<!-- القلوب -->
 <div class="hearts"></div>
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <script src="script.js"></script>
 </body>
