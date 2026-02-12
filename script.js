@@ -32,18 +32,24 @@ function startLove() {
   typeEffect();
 }
 
-/* قلوب */
+/* قلوب كبيرة */
 const hearts = document.querySelector(".hearts");
 
 function createHeart() {
   const heart = document.createElement("span");
-  heart.innerHTML = "❤";
+  heart.innerHTML = "💖";
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (14 + Math.random() * 22) + "px";
-  heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+  // حجم كبير
+  heart.style.fontSize = (40 + Math.random() * 40) + "px";
+
+  // حركة أبطأ وأنعم
+  heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+  heart.style.opacity = 0.9;
+
   hearts.appendChild(heart);
 
-  setTimeout(() => heart.remove(), 8000);
+  setTimeout(() => heart.remove(), 10000);
 }
 
-setInterval(createHeart, 350);
+setInterval(createHeart, 500);
