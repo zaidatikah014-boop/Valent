@@ -71,12 +71,21 @@ body {
 /* قلوب */
 .hearts span {
   position: absolute;
-  bottom: -40px;
-  color: #ff4d6d;
+  bottom: -80px;
   animation: floatUp linear infinite;
-  opacity: 0.8;
+  filter: drop-shadow(0 0 15px rgba(255, 77, 109, 0.8));
 }
 
+@keyframes floatUp {
+  from {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-120vh) scale(1.2);
+    opacity: 1;
+}
+  
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
